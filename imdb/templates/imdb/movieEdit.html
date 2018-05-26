@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>Movie Edit</title>
+	</head>
+	<body>
+		<form action="{% url 'imdb:moviesEdit' %}" method="post">
+			{% csrf_token %}
+		<!-- <form action="routeSearch" method="POST"> -->
+		<p>Enter the Movie Name which you want to Edit</p>
+		<select name="movieName">
+		{% for movie in movieList %}
+		<option value="{{ movie }}">{{movie}}</option>
+		{% endfor %}
+		</select>	
+			<!-- <input type="text" name="movieName"/> --></br></br>
+			<input type="submit" value="submit"/>
+		</form>
+	</body>
+</html>
